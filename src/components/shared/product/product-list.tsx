@@ -1,4 +1,6 @@
-const ProductList = ({ data, title, limit }: {data: { id: string; name: string }[], title?: string, limit?:number})=>{
+import ProductCard from "./product-card";
+
+const ProductList = ({ data, title, limit}: {data: { id: number; name: string }[], title?: string, limit?:number})=>{
       const limitedData = limit ? data.slice(0, limit) : data;
       return (
             <div className="my-10">
@@ -7,8 +9,8 @@ const ProductList = ({ data, title, limit }: {data: { id: string; name: string }
                   </h2>
                   {data.length > 0 ? (
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                              {limitedData.map((product: { id: string; name: string }, index: number) => (
-                                    <div key={`${product.id}-${index}`}>{product.name}</div>
+                              {limitedData.map((product:any) => (
+                                 <ProductCard key={product.slug} product={product} />
                               ))}
                         </div>
                   ):(
