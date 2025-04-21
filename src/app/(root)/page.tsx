@@ -1,12 +1,13 @@
+import ProductList from "@/components/shared/product/product-list";
+import sampleData from "@/db/sample-data";
 
 
 const HomePage =  async () => {
 
+    console.log(sampleData);
     return (
         <>
-        <div className="text-blue-300">
-            Prostore E-Commerce App
-        </div>
+       <ProductList data={sampleData.products} title="Featured Products" limit={4}/>
         </>
      );
 }
