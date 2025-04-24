@@ -4,7 +4,6 @@ import Link from "next/link";
 import ProductPrice from "./product-price";
 
 type Product = {
-  id: number;
   name: string;
   slug: string;
   category: string;
@@ -48,7 +47,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <CardContent className="p-4 grid gap-4">
         {/* Brand */}
         <div className="text-xs text-gray-500">{product.brand}</div>
-
         {/* Product Name */}
         <Link href={`/product/${product.slug}`} aria-label={`View ${product.name}`}>
           <h2 className="text-sm font-medium truncate">{product.name}</h2>
@@ -56,7 +54,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
         {/* Rating and Price */}
         <div className="flex justify-between items-center gap-4">
-          <p className="text-sm">{product.rating} Stars</p>
+          <p className="text-sm">{product.rating.toString()} Stars</p>
           {product.stock > 0 ? (
             <ProductPrice value={Number(product.price)} />
           ) : (
