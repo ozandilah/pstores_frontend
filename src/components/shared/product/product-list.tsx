@@ -1,7 +1,6 @@
 import ProductCard from "./product-card";
 
 type Product = {
-      id: number;
       name: string;
       slug: string;
       category: string;

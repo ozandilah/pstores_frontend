@@ -4,7 +4,6 @@ import Link from "next/link";
 import ProductPrice from "./product-price";
 
 type Product = {
-  id: number;
   name: string;
   slug: string;
   category: string;
