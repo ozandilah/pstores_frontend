@@ -47,7 +47,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <CardContent className="p-4 grid gap-4">
         {/* Brand */}
         <div className="text-xs text-gray-500">{product.brand}</div>
-z
         {/* Product Name */}
         <Link href={`/product/${product.slug}`} aria-label={`View ${product.name}`}>
           <h2 className="text-sm font-medium truncate">{product.name}</h2>
