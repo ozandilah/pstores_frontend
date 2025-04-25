@@ -4,8 +4,8 @@ import { getLatestProducts } from "@/lib/actions/product.actions";
 const HomePage = async () => {
   const latestProducts = (await getLatestProducts()).map(product => ({
     ...product,
-    price: Number(product.price),
-    rating: Number(product.rating),
+    price: product.price.toString(),
+    rating: product.rating.toString(),
   }));
 
 
